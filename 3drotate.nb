@@ -1,0 +1,316 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     11064,        307]
+NotebookOptionsPosition[     10510,        285]
+NotebookOutlinePosition[     10857,        300]
+CellTagsIndexPosition[     10814,        297]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"RotateX", "[", 
+    RowBox[{"theta_", ",", 
+     RowBox[{"{", 
+      RowBox[{"x_", ",", "y_", ",", "z_"}], "}"}]}], "]"}], " ", ":=", " ", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"xp", ",", "yp", ",", "zp"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"xp", " ", "=", " ", "x"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"yp", " ", "=", " ", 
+       RowBox[{
+        RowBox[{"y", "*", 
+         RowBox[{"Cos", "[", "theta", "]"}]}], "-", 
+        RowBox[{"z", "*", 
+         RowBox[{"Sin", "[", "theta", "]"}]}]}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"zp", " ", "=", " ", 
+       RowBox[{
+        RowBox[{"y", "*", 
+         RowBox[{"Sin", "[", "theta", "]"}]}], " ", "+", " ", 
+        RowBox[{"z", "*", 
+         RowBox[{"Cos", "[", "theta", "]"}]}]}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Return", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"N", "[", "xp", "]"}], ",", 
+         RowBox[{"N", "[", "yp", "]"}], ",", 
+         RowBox[{"N", "[", "zp", "]"}]}], "}"}], "]"}], ";"}]}], 
+    "\[IndentingNewLine]", "]"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RotateY", "[", 
+    RowBox[{"theta_", ",", 
+     RowBox[{"{", 
+      RowBox[{"x_", ",", "y_", ",", "z_"}], "}"}]}], "]"}], " ", ":=", " ", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"xp", ",", "yp", ",", "zp"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"xp", " ", "=", " ", 
+       RowBox[{
+        RowBox[{"x", "*", 
+         RowBox[{"Cos", "[", "theta", "]"}]}], "-", 
+        RowBox[{"z", "*", 
+         RowBox[{"Sin", "[", "theta", "]"}]}]}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"yp", " ", "=", " ", "y"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"zp", " ", "=", " ", 
+       RowBox[{
+        RowBox[{"z", "*", 
+         RowBox[{"Sin", "[", "theta", "]"}]}], " ", "+", " ", 
+        RowBox[{"x", "*", 
+         RowBox[{"Cos", "[", "theta", "]"}]}]}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Return", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"N", "[", "xp", "]"}], ",", 
+         RowBox[{"N", "[", "yp", "]"}], ",", 
+         RowBox[{"N", "[", "zp", "]"}]}], "}"}], "]"}], ";"}]}], 
+    "\[IndentingNewLine]", "]"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RotateZ", "[", 
+    RowBox[{"theta_", ",", 
+     RowBox[{"{", 
+      RowBox[{"x_", ",", "y_", ",", "z_"}], "}"}]}], "]"}], " ", ":=", " ", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"xp", ",", "yp", ",", "zp"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"xp", " ", "=", " ", 
+       RowBox[{
+        RowBox[{"x", "*", 
+         RowBox[{"Cos", "[", "theta", "]"}]}], "-", 
+        RowBox[{"y", "*", 
+         RowBox[{"Sin", "[", "theta", "]"}]}]}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"yp", " ", "=", " ", 
+       RowBox[{
+        RowBox[{"x", "*", 
+         RowBox[{"Sin", "[", "theta", "]"}]}], " ", "+", " ", 
+        RowBox[{"y", "*", 
+         RowBox[{"Cos", "[", "theta", "]"}]}]}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"zp", " ", "=", " ", "z"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Return", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"N", "[", "xp", "]"}], ",", 
+         RowBox[{"N", "[", "yp", "]"}], ",", 
+         RowBox[{"N", "[", "zp", "]"}]}], "}"}], "]"}], ";"}]}], 
+    "\[IndentingNewLine]", "]"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Rotate45axis", "[", 
+     RowBox[{"theta_", ",", 
+      RowBox[{"{", 
+       RowBox[{"x_", ",", "y_", ",", "z_"}], "}"}]}], "]"}], " ", ":=", " ", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", "ans", "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{"Rx", 
+        RowBox[{
+         RowBox[{"(", "alfa", ")"}], "^", 
+         RowBox[{"-", "1"}]}], "*", "Ry", 
+        RowBox[{
+         RowBox[{"(", "beta", ")"}], "^", 
+         RowBox[{"-", "1"}]}], "*", "Rz", 
+        RowBox[{"(", "theta", ")"}], "*", "Ry", 
+        RowBox[{"(", "beta", ")"}], "*", "Rx", 
+        RowBox[{"(", "alfa", ")"}]}], "*)"}], "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"ans", " ", "=", " ", 
+        RowBox[{"RotateX", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "45"}], " ", "Degree"}], ",", " ", 
+          "\[IndentingNewLine]", 
+          RowBox[{"RotateY", "[", 
+           RowBox[{
+            RowBox[{"45", " ", "Degree"}], ",", "\[IndentingNewLine]", 
+            RowBox[{"RotateZ", "[", 
+             RowBox[{"theta", ",", "\[IndentingNewLine]", 
+              RowBox[{"RotateY", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"-", "45"}], " ", "Degree"}], ",", 
+                "\[IndentingNewLine]", 
+                RowBox[{"RotateX", "[", 
+                 RowBox[{
+                  RowBox[{"45", " ", "Degree"}], ",", 
+                  RowBox[{"{", 
+                   RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}]}], 
+               "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}]}],
+            "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}]}], 
+       ";", "\[IndentingNewLine]", 
+       RowBox[{"Return", "[", "ans", "]"}], ";"}]}], "\[IndentingNewLine]", 
+     "]"}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"p0", " ", "=", " ", 
+  RowBox[{"{", 
+   RowBox[{"5", ",", "0", ",", "5"}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"p1", " ", "=", " ", 
+  RowBox[{"Rotate45axis", "[", 
+   RowBox[{
+    RowBox[{"60", " ", "Degree"}], ",", "point"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"p2", " ", "=", " ", 
+  RowBox[{"Rotate45axis", "[", 
+   RowBox[{
+    RowBox[{"120", " ", "Degree"}], ",", "point"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"p3", " ", "=", " ", 
+  RowBox[{"Rotate45axis", "[", 
+   RowBox[{
+    RowBox[{"180", " ", "Degree"}], ",", "point"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"p4", " ", "=", " ", 
+  RowBox[{"Rotate45axis", "[", 
+   RowBox[{
+    RowBox[{"240", " ", "Degree"}], ",", "point"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"p5", " ", "=", " ", 
+   RowBox[{"Rotate45axis", "[", 
+    RowBox[{
+     RowBox[{"300", " ", "Degree"}], ",", "point"}], "]"}]}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", "plot", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"pol", "=", 
+    RowBox[{"Polygon", "[", 
+     RowBox[{"{", 
+      RowBox[{"p0", ",", "p1", ",", "p2", ",", "p3", ",", "p4", ",", "p5"}], 
+      "}"}], "]"}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"{", 
+  RowBox[{"Graphics3D", "[", 
+   RowBox[{"{", 
+    RowBox[{"Blue", ",", "pol"}], "}"}], "]"}], "}"}]}], "Input",
+ CellChangeTimes->{{3.7942368966460037`*^9, 3.7942374501720343`*^9}, {
+  3.794237545204664*^9, 3.7942375697177696`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"5", ",", "0", ",", "5"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.7942373376874294`*^9, 3.7942373754047003`*^9, {3.794237437679249*^9, 
+   3.794237460668692*^9}, {3.7942375618078957`*^9, 3.7942375701982374`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "3.566713938910649`", ",", "6.0035761173896205`", ",", 
+   "1.1115869199884565`"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.7942373376874294`*^9, 3.7942373754047003`*^9, {3.794237437679249*^9, 
+   3.794237460668692*^9}, {3.7942375618078957`*^9, 3.794237570200232*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"-", "0.7010530140557191`"}], ",", "5.485809164423252`", ",", 
+   RowBox[{"-", "4.406180032977911`"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.7942373376874294`*^9, 3.7942373754047003`*^9, {3.794237437679249*^9, 
+   3.794237460668692*^9}, {3.7942375618078957`*^9, 3.79423757020422*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"-", "4.999999999999999`"}], ",", "4.440892098500626`*^-16", ",", 
+   RowBox[{"-", "4.999999999999998`"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.7942373376874294`*^9, 3.7942373754047003`*^9, {3.794237437679249*^9, 
+   3.794237460668692*^9}, {3.7942375618078957`*^9, 3.794237570206213*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"-", "5.031180032977911`"}], ",", 
+   RowBox[{"-", "4.968042211456883`"}], ",", 
+   RowBox[{"-", "0.07605301405571918`"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.7942373376874294`*^9, 3.7942373754047003`*^9, {3.794237437679249*^9, 
+   3.794237460668692*^9}, {3.7942375618078957`*^9, 3.794237570209211*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"-", "0.7634130800115434`"}], ",", 
+   RowBox[{"-", "4.450275258490515`"}], ",", "5.441713938910648`"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.7942373376874294`*^9, 3.7942373754047003`*^9, {3.794237437679249*^9, 
+   3.794237460668692*^9}, {3.7942375618078957`*^9, 3.7942375702112017`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  Graphics3DBox[
+   {RGBColor[0, 0, 1], 
+    Polygon3DBox[{{5, 0, 5}, {3.566713938910649, 6.0035761173896205`, 
+      1.1115869199884565`}, {-0.7010530140557191, 
+      5.485809164423252, -4.406180032977911}, {-4.999999999999999, 
+      4.440892098500626*^-16, -4.999999999999998}, {-5.031180032977911, \
+-4.968042211456883, -0.07605301405571918}, {-0.7634130800115434, \
+-4.450275258490515, 5.441713938910648}}]},
+   AutomaticImageSize->True,
+   ImageSize->{186.80789907314278`, 197.96307223377593`},
+   ViewPoint->{1.9616469234638685`, -1.8119629403932063`, -2.078155829168339},
+   ViewVertical->{0.8499817340354023, -0.5695460122760885, 
+    0.2813456097614031}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.7942373376874294`*^9, 3.7942373754047003`*^9, {3.794237437679249*^9, 
+   3.794237460668692*^9}, {3.7942375618078957`*^9, 3.794237570225211*^9}}]
+}, Open  ]]
+},
+WindowSize->{1280, 637},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (September 9, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 7049, 187, 932, "Input"],
+Cell[7632, 211, 254, 5, 31, "Output"],
+Cell[7889, 218, 312, 7, 31, "Output"],
+Cell[8204, 227, 341, 7, 31, "Output"],
+Cell[8548, 236, 346, 7, 36, "Output"],
+Cell[8897, 245, 362, 8, 31, "Output"],
+Cell[9262, 255, 347, 8, 31, "Output"],
+Cell[9612, 265, 882, 17, 215, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
